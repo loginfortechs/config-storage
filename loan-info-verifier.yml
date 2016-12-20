@@ -1,0 +1,26 @@
+#memached details
+memcached:
+  server: ec2-54-200-203-30.us-west-2.compute.amazonaws.com
+  port: 11211
+
+# HTTP Server
+server:
+  port: 8763
+
+# Spring properties
+spring:
+  application:
+     name: loan-info-verifier  # Service registers under this name
+#Really Ideally this should be -Dspring.profiles.active=<profile>
+  profiles:
+   active: postgres
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.118:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
