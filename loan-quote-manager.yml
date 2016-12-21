@@ -30,3 +30,12 @@ eureka:
       defaultZone: http://ec2-54-200-203-30.us-west-2.compute.amazonaws.com:8761/eureka
   instance:
     leaseRenewalIntervalInSeconds: 5    # DO NOT DO THIS IN PRODUCTION 
+
+  
+#Kafka Properties
+kafka:
+  enabled: true
+  topic:
+    name: LOG_TOPIC
+  bootstrap:
+    servers: node3:9092
